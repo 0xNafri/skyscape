@@ -9,7 +9,7 @@ const windEl = document.getElementById('current-wind')
 const humidEl = document.getElementById('current-humid')
 const cardEl = document.querySelector('.forecast-card')
 
-const API_KEY = "4ebfaead6c491afbfc58fc63b4b49102"
+const API_KEY = process.env.API_KEY
 let city = ''
 let icon = ''
 let date = ''
