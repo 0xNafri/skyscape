@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+</head>
+<body>
+    <header>Weather App</header>
+    <div>
+        <input type="text" name="" id="city-input" placeholder="Eg. Kuala Lumpur" value="Singapore">
+        <button id="submit-btn">Submit</button>
+        <button id="location-btn">Use Current Location</button>  
+    </div>
+    <div>
+        <h1>Current Weather</h1>
+        <h2 id="city-text">City:</h2>
+        <div id="current-icon"></div>
+        <h6 id="current-weather">Weather:</h6>
+        <h6 id="current-temp">Temperature:</h6>
+        <h6 id="current-wind">Wind:</h6>
+        <h6 id="current-humid">Humidity:</h6>
+    </div>
+
+    <div>
+        <h1>Forecast Weather</h1>
+        
+        <ul>
+            <li class="forecast-card">
+                <h6 id="forecast-weather">Weather:</h6>
+                <h6 id="forecast-temp">Temperature:</h6>
+                <h6 id="forecast-wind">Wind:</h6>
+                <h6 id="forecast-humid">Humidity:</h6>
+            </li>
+        </ul>
+    <div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
