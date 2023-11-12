@@ -39,6 +39,7 @@ function getCurrentLocation() {
         position => {
             const { latitude, longitude } = position.coords
             getCurrentWeather(latitude,longitude)
+            getForecastWeather(latitude,longitude)
         },
         error => {
             if (error.code === error.PERMISSION_DENIED) {
@@ -74,8 +75,9 @@ function getCurrentWeather(latitude, longitude) {
            
             weatherEL.innerHTML = `<p>Weather: ${weather}</p>`
             tempEL.innerHTML = `<p>Temperature: ${temperature}°C</p>`
-            windEl.innerHTML = `<p>Wind: ${wind} M/S</p>`
-            humidEl.innerHTML = `<p>Humidity: ${humidity} %</p>`
+            windEl.innerHTML = `<p>Wind: ${wind} m/s</p>`
+            humidEl.innerHTML = `<p>Humidity: ${humidity}%</p>`
+            inputEL.value = ''
             // console.log(icon)
         })
 }
@@ -92,6 +94,8 @@ function getForecastWeather(latitude, longitude) {
                 }
             })
             
+            cardEl.innerHTML = ''
+
             fiveDaysForecast.reverse()
 
             fiveDaysForecast.forEach((forecastList, index) => {
@@ -104,12 +108,12 @@ function getForecastWeather(latitude, longitude) {
                 date = (dateObject.toString()).slice(0,15)
 
                 const html = `<li>
-                <h2>(${date})</h2>
+                <h3>(${date})</h3>
                 <img src="https://openweathermap.org/img/wn/${icon}@4x.png" alt="forecast-icon">
                 <h6 id="forecast-weather">Weather: ${weather}</h6>
-                <h6 id="forecast-temp">Temperature: ${temperature}</h6>
-                <h6 id="forecast-wind">Wind: ${wind}</h6>
-                <h6 id="forecast-humid">Humidity: ${humidity}</h6>
+                <h6 id="forecast-temp">Temperature: ${temperature} °C</h6>
+                <h6 id="forecast-wind">Wind: ${wind} m/s</h6>
+                <h6 id="forecast-humid">Humidity: ${humidity}%</h6>
                 </li>`
                 if (index < fiveDaysForecast.length - 1) {
                     cardEl.insertAdjacentHTML("afterbegin", html)
