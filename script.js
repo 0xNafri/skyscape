@@ -78,7 +78,7 @@ function getCurrentWeather(latitude, longitude) {
             windEl.innerHTML = `<p>Wind: ${wind} m/s</p>`
             humidEl.innerHTML = `<p>Humidity: ${humidity}%</p>`
             inputEL.value = ''
-            // console.log(icon)
+          
         })
 }
 
@@ -118,7 +118,7 @@ function getForecastWeather(latitude, longitude) {
                 if (index < fiveDaysForecast.length - 1) {
                     cardEl.insertAdjacentHTML("afterbegin", html)
                 }
-                console.log(forecastList)
+              
             })
         })
 }
