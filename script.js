@@ -21,7 +21,7 @@ let humidity = ''
 function getGeolocation() {
     let inputValue = inputEL.value
     // console.log(inputValue)
-    axios.get(`http://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=5&appid=${API_KEY}`)
+    axios.get(`https://api.openweathermap.org/geo/1.0/direct?q=${inputValue}&limit=5&appid=${API_KEY}`)
         .then(response => {
             let cityLocation = response.data[0]
             let cityLatitude = cityLocation.lat
